@@ -1,0 +1,39 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+```{r}
+library(readxl)
+veri2 <- read_excel("Downloads/veri2.xlsx")
+View(veri2)
+```
+
+```{r}
+sum(is.na(veri2))
+```
+
+```{r}
+matrix(veri2)
+veri2
+```
+
+```{r}
+veri2 [2,4]<- NA
+veri2 [6,4]<- NA
+veri2 [3,2]<- NA
+veri2<- apply(veri2, 2, function(x) ifelse(is.na(x), 0, x))
+veri2
+anyNA(veri2)
+sum(is.na(veri2))
+veri2_summary<- summary(veri2)
+```
+
+
+
+
+
+
+
+
